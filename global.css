@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .text-bold78 {
+    font-size: 78px;
+    line-height: 96px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Bold";
+  }
+  .text-bold60 {
+    font-size: 60px;
+    line-height: 72px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Bold";
+  }
+  .text-bold48 {
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Bold";
+  }
+  .text-bold40 {
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Bold";
+  }
+  .text-bold32 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Bold";
+  }
+  .text-bold24 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Bold";
+  }
+  .text-bold18 {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+  }
+  .text-bold16 {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Bold";
+  }
+  .text-bold14 {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+  }
+  .text-bold12 {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Bold";
+  }
+  .text-bold10 {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Bold";
+  }
+  .text-regular78 {
+    font-size: 78px;
+    line-height: 96px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+  .text-regular60 {
+    font-size: 60px;
+    line-height: 72px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+  .text-regular48 {
+    font-size: 48px;
+    line-height: 60px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+  .text-regular32 {
+    font-size: 32px;
+    line-height: 46px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+  .text-regular24 {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+  .text-e-regular18 {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+  .text-regular18 {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+  .text-regular16 {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+  .text-regular14 {
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+  .text-regular12 {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+  .text-regular10 {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: -0.02em;
+    font-family: "Pretendard-Regular";
+  }
+}

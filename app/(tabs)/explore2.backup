@@ -1,0 +1,166 @@
+import { StyleSheet, Image, Platform, Text, View, Dimensions, FlatList, useWindowDimensions, ScrollView, findNodeHandle, UIManager } from "react-native";
+import { useEffect, useRef, useState } from "react";
+import { MotiView } from "moti";
+
+import { IconSymbol } from "@/components/ui/IconSymbol";
+import ParallaxScrollView from "@/components/ParallaxScrollView";
+
+const mockupData = [
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+  {
+    id: 0,
+    name: "히히히히히히히히히히히히히히히",
+  },
+];
+
+export default function TabTwoScreen() {
+  const [isViewed, setIsViewed] = useState(false);
+  const targetRef = useRef(null);
+  const { height: windowHeight } = useWindowDimensions();
+
+  const handleScroll = () => {
+    if (!targetRef.current) return;
+
+    const viewedNode = findNodeHandle(targetRef.current);
+    if (!viewedNode) return;
+
+    UIManager.measureInWindow(viewedNode, (x, y, width, height) => {
+      const elementTop = y;
+      const elementBottom = y + height;
+
+      const isOnScreen = elementBottom > 0 && elementTop < windowHeight;
+
+      setIsViewed(isOnScreen);
+    });
+  };
+
+  return (
+    <MotiView from={{ opacity: 0, translateY: 20 }} animate={{ opacity: 1, translateY: 0 }} exit={{ opacity: 0, translateY: -20 }} transition={{ type: "timing", duration: 1300 }}>
+      <FlatList
+        scrollEventThrottle={16}
+        onScroll={handleScroll}
+        className={`w-full`}
+        data={mockupData}
+        keyExtractor={(item, key) => key}
+        renderItem={({ item }) => (
+          <View ref={targetRef} className={`${isViewed ? "bg-[blue]" : "bg-[red]"} flex-row justify-start items-center w-full rounded-[8px] mb-10 bg-[white]`}>
+            <Text>1</Text>
+            <Text className={`text-[32px] `}>{item?.name}</Text>
+          </View>
+        )}
+      />
+    </MotiView>
+  );
+}
+
+const styles = StyleSheet.create({
+  headerImage: {
+    color: "#808080",
+    bottom: -90,
+    left: -35,
+    position: "absolute",
+  },
+  titleContainer: {
+    flexDirection: "row",
+    gap: 8,
+  },
+});
