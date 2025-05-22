@@ -92,7 +92,6 @@ export default function HomeScreen() {
 
   const randomDog = () => {
     const mixing = dogsList[Math.floor(Math.random() * dogsList.length)];
-    console.log(mixing);
     setSelectedDog(dogsList.filter((dog) => dog.id === mixing.id));
   };
 

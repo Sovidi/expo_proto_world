@@ -7,7 +7,6 @@ const useScrollScanner = () => {
   const counting = () => {
     scrollCounter.current += 1;
     setScrollScanner(scrollCounter.current);
-    console.log("Scroll Scanner Count: ", scrollCounter.current);
   };
 
   return { scrollScanner, counting };

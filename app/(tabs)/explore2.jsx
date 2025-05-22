@@ -1,129 +1,24 @@
 // import { MotiView } from "moti";
-import { FlatList, StyleSheet } from "react-native";
-import ContentBox from "../../components/box";
-import useScrollScanner from "../../hooks/useScrollScanner";
-
-const mockupData = [
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-  {
-    id: 0,
-    name: "하늘에계신아카라트여나를섬기소서",
-  },
-];
+import { FlatList, StyleSheet, View } from "react-native";
+import useScrollScanner from "@/hooks/useScrollScanner";
+import ContentBox from "@/components/box";
 
 export default function TabTwoScreen() {
   const { scrollScanner, counting } = useScrollScanner();
 
   return (
-    <FlatList
-      onScroll={() => {
-        counting();
-      }}
-      scrollEventThrottle={32}
-      className={`w-full`}
-      data={mockupData}
-      keyExtractor={(item, key) => key}
-      renderItem={({ item }) => <ContentBox scrollScanner={scrollScanner} item={item} />}
-    />
+    <View className={`pt-50 flex-1 bg-[white] dark:bg-[black]`}>
+      <FlatList
+        onScroll={() => {
+          counting();
+        }}
+        scrollEventThrottle={32}
+        className={`w-full`}
+        data={Array.from({ length: 30 }, (_, i) => ({ id: i, name: `하늘에계신아카라트여나를섬기소서` }))}
+        keyExtractor={(item, key) => key}
+        renderItem={({ item }) => <ContentBox scrollScanner={scrollScanner} item={item} />}
+      />
+    </View>
   );
 }
 
