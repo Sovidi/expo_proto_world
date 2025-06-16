@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
 import { findNodeHandle, UIManager, useWindowDimensions } from "react-native";
 
-const useScannerView = () => {
+const useIntersectionObserver = () => {
   const [isViewed, setIsViewed] = useState(false);
   const targetRef = useRef(null);
   const { height: screenHeight } = useWindowDimensions();
 
-  const handleScroll = () => {
+  const intersecting = () => {
     if (!targetRef.current) return;
 
     const viewedNode = findNodeHandle(targetRef.current);
@@ -22,7 +22,7 @@ const useScannerView = () => {
     });
   };
 
-  return { targetRef, isViewed, handleScroll };
+  return { targetRef, isViewed, intersecting };
 };
 
-export default useScannerView;
+export default useIntersectionObserver;

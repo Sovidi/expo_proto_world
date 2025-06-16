@@ -8,6 +8,7 @@ const ScaryMain = () => {
 
   useEffect(() => {
     setIsTouched(false);
+    setSafety(false);
   }, []);
 
   return (
