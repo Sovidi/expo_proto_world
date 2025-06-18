@@ -6,7 +6,9 @@ const useScrollCounter = () => {
 
   const counting = () => {
     scrollCounter.current += 1;
-    setIsScrolled(scrollCounter.current);
+    requestAnimationFrame(() => {
+      setIsScrolled(scrollCounter.current);
+    });
   };
 
   return { isScrolled, counting };

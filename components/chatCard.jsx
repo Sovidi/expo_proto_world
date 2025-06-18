@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import { MotiView } from "moti";
 
-import Animated, { useAnimatedStyle, withTiming, useSharedValue } from "react-native-reanimated";
+import Animated, { useAnimatedStyle, withTiming, useSharedValue, Easing } from "react-native-reanimated";
 
 const ChatCard = ({ item, isScrolled }) => {
   const { targetRef, isViewed, intersecting } = useIntersectionObserver();
@@ -12,12 +12,17 @@ const ChatCard = ({ item, isScrolled }) => {
   const translateX = useSharedValue(-100);
 
   useEffect(() => {
+    const config = {
+      duration: 1000,
+      easing: Easing.inOut(Easing.ease),
+    };
+
     if (isViewed) {
-      opacity.value = withTiming(1, { duration: 1000 });
-      translateX.value = withTiming(0, { duration: 1000 });
+      opacity.value = withTiming(1, config);
+      translateX.value = withTiming(0, config);
     } else {
-      opacity.value = withTiming(0, { duration: 1000 });
-      translateX.value = withTiming(-100, { duration: 1000 });
+      opacity.value = withTiming(0, config);
+      translateX.value = withTiming(-100, config);
     }
   }, [isViewed]);
 

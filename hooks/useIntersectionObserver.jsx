@@ -12,12 +12,14 @@ const useIntersectionObserver = () => {
     const viewedNode = findNodeHandle(targetRef.current);
     if (!viewedNode) return;
 
-    UIManager.measureInWindow(viewedNode, (x, y, width, height) => {
-      const isOnScreen = y + height > 0 && y < screenHeight;
+    requestAnimationFrame(() => {
+      UIManager.measureInWindow(viewedNode, (x, y, width, height) => {
+        const isOnScreen = y + height > 0 && y < screenHeight;
 
-      setIsViewed((prev) => {
-        if (prev !== isOnScreen) return isOnScreen;
-        return prev;
+        setIsViewed((prev) => {
+          if (prev !== isOnScreen) return isOnScreen;
+          return prev;
+        });
       });
     });
   };
