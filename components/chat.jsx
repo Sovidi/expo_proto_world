@@ -18,7 +18,7 @@ const Chat = () => {
 
   useEffect(() => {
     if (chatData.length > 0) {
-      setReversedChatData(chatData.slice().reverse());
+      setReversedChatData(data.slice().reverse());
     }
   }, [chatData]);
 
@@ -26,8 +26,8 @@ const Chat = () => {
     if (inputText.trim() === "") {
       return;
     }
-    const sKey = Math.random().toString(36).substring(2, 15);
-    socket.emit("submitMessage", JSON.stringify({ txt: inputText, sKey }));
+    const key = Math.random().toString(36).substring(2, 15);
+    socket.emit("submitMessage", JSON.stringify({ txt: inputText, key }));
 
     setInputText("");
   };
@@ -39,12 +39,12 @@ const Chat = () => {
           counting();
         }}
         className={"w-full h-full"}
-        data={reversedChatData}
+        data={data}
         renderItem={({ item }) => <ChatCard item={item} isScrolled={isScrolled} />}
-        keyExtractor={(item) => item.sKey}
+        keyExtractor={(item) => item.key}
       />
-      <View className={"w-full h-fit flex-row justify-between items-center mb-10"}>
-        <TextInput className={`bg-pink text-[black] dark:text-[white]`} onSubmitEditing={txtDataSubmit} placeholder="암거나 적으세용" value={inputText} onChangeText={setInputText} />
+      <View className={"w-full h-fit py-10 flex-row justify-between items-center mb-10"}>
+        <TextInput className={`w-full h-full bg-pink text-[black] dark:text-[white]`} onSubmitEditing={txtDataSubmit} placeholder="암거나 적으세용" value={inputText} onChangeText={setInputText} />
       </View>
     </View>
   );

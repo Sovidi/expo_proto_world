@@ -12,33 +12,33 @@ const useFetchComp = () => {
     let res;
     switch (type) {
       case "GET":
-        res = await instance.get(`/select`);
+        res = await instance.get(`/lcm_select`);
         setData(res.data);
         break;
 
       case "POST":
-        res = await instance.post(`/insert`, data);
+        res = await instance.post(`/lcm_insert`, data);
         setData(res.data);
         break;
 
       case "PUT":
-        res = await instance.put(`/update`, data);
+        res = await instance.put(`/lcm_update`, data);
         setData(res.data);
         break;
 
       case "DELETE":
-        res = await instance.delete(`/delete?key=${data.sKey}`);
+        res = await instance.delete(`/lcm_delete?key=${data.key}`);
         setData(res.data);
         break;
 
       default:
-        res = await instance.get(`/select`);
+        res = await instance.get(`/lcm_select`);
         setData(res.data);
     }
   };
 
   useEffect(() => {
-    console.log(data);
+    console.log(`글 데이터 업데이트`, data);
   }, [data]);
 
   return { data, fetchFn };
